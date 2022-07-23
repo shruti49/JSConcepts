@@ -1,3 +1,11 @@
+//* Vaiables declared with let and cont keyword are not hoisted 
+//? because let and cont variables have seperate scope
+
+console.log(letValue, constValue); //! Uncaught ReferenceError: Cannot access'letValue, 
+								   //! constValue' before initialization
+const constValue = "hey";
+let letValue = "hellow";
+
 getName();
 getName1(); //not a function
 getName2(); //not a function
