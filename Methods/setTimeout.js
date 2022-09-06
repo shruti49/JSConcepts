@@ -28,12 +28,17 @@
 // }
 // Z();
 
-function func(x, y) {
-	x += 2;
-	y.push(1);
+// These ids can be passed to clear the timeout and interval
+function a() {
+	const timeoutId = setTimeout(() => console.log(this), 1000);
 }
 
-const x = 1;
-const y = [];
-func(x, y);
-console.log(x, y);
+function b() {
+	const intervalId = setInterval(() => console.log(this), 2000);
+}
+
+console.log(a(), b());
+// console.log(timeoutId, intervalId);
+
+// clearInterval(intervalId);
+// clearTimeout(timeoutId);
